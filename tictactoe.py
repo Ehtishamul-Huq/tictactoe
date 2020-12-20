@@ -19,7 +19,6 @@ def player_input():
         return ('X','O')
     else:
         return ('O','X')
-player1_marker, player2_marker=player_input()
 
 def place_marker(board, marker, position):
     board[position]=marker
@@ -48,8 +47,8 @@ def full_board_check(board):
 
 def player_choice(board):
     position=0
-    while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board,position):
-        position=int(input('Choose a position (1-9): '))
+    while position not in list(range(1,11)) or not space_check(board,position):
+        position= int(input('Choose a position (1-9): '))
     return position
 
 def replay():
